@@ -14,7 +14,7 @@ function startGame() {
     time = 30;
     scoreBoard.innerText = score;
     timeBoard.innerText = time;
-    moleInterval = setInterval(showMole, 500);
+    moleInterval = setInterval(showMole(), 500);
     setTimeout(() => {
         clearInterval(moleInterval);
         isPlaying = false;
@@ -45,5 +45,5 @@ function whackMole(e) {
     }
 }
 
-holes.forEach(hole => hole.addEventListener('click', whackMole));
-startButton.addEventListener('click', startGame);
+holes.forEach(hole => hole.addEventListener('click', whackMole()));
+startButton.addEventListener('click', startGame());
